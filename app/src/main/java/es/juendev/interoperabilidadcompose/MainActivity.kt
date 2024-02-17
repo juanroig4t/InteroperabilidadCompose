@@ -2,6 +2,7 @@ package es.juendev.interoperabilidadcompose
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -13,16 +14,13 @@ import androidx.compose.ui.platform.ComposeView
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        val composeView = findViewById<ComposeView>(R.id.compose_view)
-
-        composeView.setContent {
+        setContent {
             Column (
                 modifier = Modifier.fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
-                Text(text = "Compose!!!!!!",
+                Text(text = "Compose Fullscreen!!",
                     style= MaterialTheme.typography.headlineLarge,
                     color = MaterialTheme.colorScheme.primary
                 )
